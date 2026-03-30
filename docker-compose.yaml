@@ -17,6 +17,12 @@ services:
     container_name: cart
     depends_on:
     - redis
+  shipping:
+    build: ./shipping
+    image: vijayalakshmitv/shipping:1.0.0
+    container_name: shipping
+    depends_on:
+    - mysql
   frontend:
     build: ./frontend
     image: vijayalakshmitv/frontend:1.0.0
@@ -27,6 +33,7 @@ services:
     - catalogue
     - user
     - cart
+    - shipping
   mongodb:
     build: ./mongodb
     image: vijayalakshmitv/mongodb:1.0.0
