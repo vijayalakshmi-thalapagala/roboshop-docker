@@ -11,6 +11,13 @@ services:
     container_name: user
     depends_on:
     - redis
+  frontend:
+    build: ./frontend
+    image: vijayalakshmitv/user:1.0.0
+    container_name: frontend
+    depends_on:
+    - catalogue
+    - user
   mongodb:
     build: ./mongodb
     image: vijayalakshmitv/mongodb:1.0.0
