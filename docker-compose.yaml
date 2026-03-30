@@ -5,19 +5,21 @@ services:
     container_name: catalogue
     depends_on:
       - mongodb
+    networks:
+      - roboshop
 
   mongodb:
     build: ./mongodb
     image: vijayalakshmitv/mongodb:1.0.0
     container_name: mongodb
-
+    networks:
+      - roboshop
 # networks:
 #   roboshop:
 #     external: true   # tells Compose to use the existing network
 #     name: roboshop
 
+
 networks:
-  default:
+  roboshop:
     driver: bridge
-    name: roboshop
-    external: false # if true, you need to create network manually
