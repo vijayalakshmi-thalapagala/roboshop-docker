@@ -13,7 +13,7 @@ services:
     - redis
   frontend:
     build: ./frontend
-    image: vijayalakshmitv/user:1.0.0
+    image: vijayalakshmitv/frontend:1.0.0
     container_name: frontend
     depends_on:
     - catalogue
