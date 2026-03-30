@@ -5,15 +5,19 @@ services:
     image: vijayalakshmi/catalogue:1.0.0
     container_name: catalogue
     depends_on:
-    - mongodb
+      - mongodb
+    networks:
+      - roboshop
+
   mongodb:
     build: 
-      dockerfile: mongodb.Dockerfile # it moves to mongodb directory
-    image: vijayalakshmitv/mongodb:1.0.0 #docker build -t vijayalakshmitv/mongodb:1.0.0 
+      dockerfile: mongodb.Dockerfile
+    image: vijayalakshmitv/mongodb:1.0.0
     container_name: mongodb
-    
-  networks:
-    roboshop:
-      external: true # if true, you need to create network manually
-      name: roboshop
-     
+    networks:
+      - roboshop
+
+networks:
+  roboshop:
+    external: true   # tells Compose to use the existing network
+    name: roboshop
