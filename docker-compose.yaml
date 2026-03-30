@@ -11,6 +11,12 @@ services:
     container_name: user
     depends_on:
     - redis
+  cart:
+    build: ./cart
+    image: vijayalakshmitv/cart:1.0.0
+    container_name: cart
+    depends_on:
+    - redis
   frontend:
     build: ./frontend
     image: vijayalakshmitv/frontend:1.0.0
@@ -20,6 +26,7 @@ services:
     depends_on:
     - catalogue
     - user
+    - cart
   mongodb:
     build: ./mongodb
     image: vijayalakshmitv/mongodb:1.0.0
