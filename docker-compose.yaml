@@ -13,7 +13,7 @@ services:
     container_name: mongodb
     
   networks:
-    default:
-      driver: bridge
+    roboshop:
+      external: true # if true, you need to create network manually
       name: roboshop
-      external: false # if true, you need to create network manually
+     
