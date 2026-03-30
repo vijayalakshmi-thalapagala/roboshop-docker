@@ -14,6 +14,6 @@ services:
     
   networks:
     default:
-    driver: bridge
-    name: roboshop
-    external: false # if true, you need to create network manually
+      driver: bridge
+      name: roboshop
+      external: false # if true, you need to create network manually
