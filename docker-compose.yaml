@@ -1,8 +1,7 @@
 services:
   catalogue:
-    build:
-      dockerfile: catalogue.Dockerfile
-    image: vijayalakshmi/catalogue:1.0.0
+    build: ./catalogue
+    image: vijayalakshmitv/catalogue:1.0.0
     container_name: catalogue
     depends_on:
       - mongodb
@@ -10,8 +9,7 @@ services:
       - roboshop
 
   mongodb:
-    build: 
-      dockerfile: mongodb.Dockerfile
+    build: ./mongodb
     image: vijayalakshmitv/mongodb:1.0.0
     container_name: mongodb
     networks:
