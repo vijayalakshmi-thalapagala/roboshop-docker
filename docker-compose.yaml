@@ -11,10 +11,10 @@ services:
     image: vijayalakshmitv/mongodb:1.0.0
     container_name: mongodb
 
-networks:
-  roboshop:
-    external: true   # tells Compose to use the existing network
-    name: roboshop
+# networks:
+#   roboshop:
+#     external: true   # tells Compose to use the existing network
+#     name: roboshop
 
 networks:
   default:
